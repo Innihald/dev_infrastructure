@@ -11,6 +11,7 @@ services:
       - 5432:5432
     volumes:
       - postgresdb
+
   pgAdmin:
     image: dpage/pgadmin4:4.25
     environment:
@@ -18,3 +19,12 @@ services:
       PGADMIN_DEFAULT_PASSWORD: supersecret
     ports:
       - 7010:80
+
+  mongodb:
+    image: mongo:4.4.0-bionic
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - 27017:27017
