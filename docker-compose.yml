@@ -49,3 +49,11 @@ services:
     environment:
       ARTEMIS_USERNAME: root
       ARTEMIS_PASSWORD: example
+
+  startpage:
+    image: caddy:2.1.1-alpine
+    restart: always
+    ports:
+      - 80:80
+    volumes:
+      - .:/usr/share/caddy
