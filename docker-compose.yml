@@ -38,3 +38,14 @@ services:
       ME_CONFIG_MONGODB_ADMINUSERNAME: root
       ME_CONFIG_MONGODB_ADMINPASSWORD: example
       ME_CONFIG_MONGODB_SERVER: mongodb
+  
+  activemq:
+    image: vromero/activemq-artemis:2.15.0-alpine
+    restart: always
+    ports:
+     - 61616:61616
+     - 5672:5672
+     - 7030:8161
+    environment:
+      ARTEMIS_USERNAME: root
+      ARTEMIS_PASSWORD: example
